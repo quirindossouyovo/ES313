@@ -193,33 +193,35 @@ The schedule shown below is an indication. You should have your computer at any 
 - 16 Sep (1Hr)
 - 18 Sep (2Hr)
 - 30 Sep (1Hr)
-- 07 Oct (1Hr; assistant)
-- 09 Oct (2Hr; assistant)
-- 30 Oct (2Hr; assistant)
-
 
 ### Practice
 - 04 Sep (1Hr)
 - 09 Sep (1Hr)
 - 23 Sep (1Hr)
 - 25 Sep (2Hr)
-- 02 Oct (2Hr; New date to be found)
+
+### Theory and Practice (Mixed) (Assistant hand-over)
+- 07 Oct (1Hr)
+- 07 Oct N (2Hr)
+- 08 Oct F (2Hr)
+- 09 Oct (2Hr)
 - 21 Oct (1Hr)
-- 22 Oct (2Hr)*
-- 28 Oct (2Hr)*
-- 29 Oct (2Hr - N)*
-- 30 Oct (2Hr - F)*
-- 06 Nov (2Hr; assistant)
+- 22 Oct (2Hr) + TEST (2Hr)
+- 28 Oct (2Hr)
+- 29 Oct N (2Hr)
+- 30 Oct F (2Hr)
+- 30 Oct (2Hr)
+- 06 Nov (2Hr)
 
 ### Blended learning / self study days
-- 14 Oct
-- 16 Oct
+- 14 Oct (1Hr)
+- 16 Oct (2Hr)
 
 
 ### Project timings
 - NLT early November: list of projects available
 - Starting Nov 18, course hours are scheduled for project work. During these periods, there are no ex cathedra classes, but we are available during contact hours (contact us beforehand)
-- 02 & 04 Dec: mandatory individual meeting - understanding of the problem
+- 25 & 27 Nov: mandatory individual meeting - understanding of the problem
 - 16 & 18 Dec: mandatory individual meeting - progress evaluation
 - Jan: oral exam on the project work
 """

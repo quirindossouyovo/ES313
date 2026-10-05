@@ -180,9 +180,11 @@ Over many steps, this process self-organizes — producing **fire size distribut
 	- `2`: Burning
 
 !!! info "Model Parameters"
+	*Input:*
 	* `G` (`g x g`): The size of the grid.
 	* `f_s`: The sparking frequency.
 	* `N_s`: The number of steps to run the simulation.
+	*Output/State:*
 	* `N_f`: The number of fires with area (see infra).
 	* `A_f`: The area of each fire. (I.e. the amount of trees consumed per fire).
 
