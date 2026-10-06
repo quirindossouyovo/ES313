@@ -171,7 +171,7 @@ In this application, we will cover the pricing of financial options:
 
 
 
-One frequently used method of modeling stock prices, is with the [**Black-Scholes**](https://en.wikipedia.org/wiki/Black–Scholes_model) model, a mathematical model for the dynamics of a financial market containing derivative investment instruments. This model makes several assumptions, which we will not all cover here. However, one of the assumptions is the **Random walk**: 
+To determine a fair price for an option today, we must model how the underlying asset's price evolves over time under market uncertainty. A foundational framework for this is the **[Black-Scholes Model](https://en.wikipedia.org/wiki/Black–Scholes_model)**, a mathematical model for the dynamics of a financial market containing derivative investment instruments. This model makes several assumptions, which we will not all cover here. However, one of the assumptions is the **Random walk**: 
 
 !!! info "Random Walk"
 	The instantaneous log return of the stock price is an infinitesimal random walk with drift; more precisely, the stock price follows a geometric Brownian motion, and it is assumed that the drift and volatility of the motion are constant.
@@ -760,10 +760,9 @@ A **particle filter** sidesteps all of this by representing the posterior as a l
 !!! tip "Tasks"
 
 	1. Simulate the true pendulum trajectory and two types of noisy sensor (Gaussian noise vs. a quantised/digital sensor),
-	2. Implement the predict &rarr; weight &rarr; resample particle filter loop,
+	2. Implement the predict, weight, resample particle filter loop,
 	3. Visualise how the particle cloud bifurcates and re-converges as the angle becomes observable/unobservable,
 	4. Compare the result against an Extended Kalman Filter (EKF) to see exactly where the Gaussian assumption breaks down, and
-	5. As an appendix, compare a few numerical integration schemes to see why the discrete dynamics model (Eq. 2 below) is built the way it is.
 """
 
 # ╔═╡ 9e43da0a-eab5-4cf2-8dee-2d8f92788ed6

@@ -131,6 +131,19 @@ To get you up to speed with the typical structure of the Agents.jl package, we f
     7. Collect relevant data.
 
 For your convenience, the tutorial code has already been inserted below.
+
+Schelling's segregation model is an agent-based spatial model that demonstrates how micro-level individual preferences for like-minded neighbors can lead to macro-level spatial segregation, even when agents are highly tolerant. In a typical grid setup—such as the implementation in Agents.jl—agents belonging to different groups (e.g., orange and blue) occupy spatial nodes alongside vacant spots. During each step, an agent checks the composition of its local neighborhood against its personal satisfaction threshold: if the fraction of similar neighbors falls below this threshold (e.g., wanting at least 30% or 35% similar neighbors), the agent becomes unhappy and relocates to a random vacant tile. As unhappy agents iteratively migrate across the grid, even a weak preference for local similarity cascades into self-organizing dynamics, rapidly transforming an initially well-mixed integrated population into distinct, segregated clusters.
+
+!!! tip "Basic Rules"
+	The Schelling segregation model basic rules
+
+	- A fixed pre-determined number of agents exist in the model.
+	- Agents belong to one of two groups (1 or 2).
+	- The agents live in a two-dimensional non-periodic grid.
+	- Only one agent per position is allowed.
+	- At each state of the simulation, each agent looks at its 8 neighboring positions (cardinal and diagonal directions). It then counts how many neighboring agents belong to the same group (if any). This leads to 8 neighboring positions per position (except at the edges of the grid).
+	- If an agent has at least min_to_be_happy neighbors belonging to the same group, then it becomes happy.
+	- Else, the agent is unhappy and moves to a new random location in space while respecting the 1-agent-per-position rule.
 """
 
 # ╔═╡ 618fa988-f5d0-4cf0-8068-82d4b6cc920a

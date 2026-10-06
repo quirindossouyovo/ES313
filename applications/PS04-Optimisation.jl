@@ -337,7 +337,7 @@ In this case, we have a function that needs to be minimised, subject to several 
 	where  ``f:\mathbb{R}^{n}\rightarrow\mathbb{R}``, ``\vec{h}:\mathbb{R}^{n}\rightarrow\mathbb{R}^{m}``,
 	``m\leq n, \text{and } \vec{g}:\mathbb{R}^{n}\rightarrow\mathbb{R}^{p}``.
 
-However, if both your objective function and constraints are linear, the problem (and solutions methods) can be simplified.
+However, if both your objective function and constraints are linear, the problem (and solution methods) can be simplified.
 
 !!! tip "Linear Programming"
 	A linear program is an optimization problem of the form:

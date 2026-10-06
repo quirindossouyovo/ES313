@@ -939,6 +939,30 @@ Given the speed, direction, and position of a neutron and some physical constant
 Electronic computers offered an alternative: simulate many virtual neutron histories and summarise the resulting population dynamics statistically. In this lecture we use the example as a toy neutron-transport model for Monte Carlo reasoning: event sampling, repeated replications, uncertainty, and branching processes. The model is deliberately simplified and should be read as a numerical-methods case study, not as an engineering design model.
 
 ### Model building
+
+!!! info "What are we simulating?"
+	*"A digital board game played by individual neutrons."*
+	1. **Birth:** A neutron is created at a specific point in space (e.g., via spontaneous radioactive decay).
+	2. **Flight:** It picks a random direction and travels a random distance ``d`` through the material.
+	3. **Collision:** When it travels its distance ``d``, it hits a nucleus and a *"dice roll"* determines its fate:
+	- Absorbed (it dissapears)
+	- Escapes (it flies out of the material)
+	- Scattered (it bounces off, changes direction/engergy and rolls for a new distance ``d``.)
+	- Fission (it splits a nucleus, creating ``N`` new neutrons (branching), each new neutron goes back to step 1)
+
+	By simulating thousands of individual neutron histories, you can answer the core question: **Is the system subcritical (neutrons die out) or supercritical (neutron population explodes)?**
+
+!!! tip "Key Concepts"
+	1. **Target size**
+	- Microscopic Cross Section ``\sigma``: Imagine a nucleus as a tiny target. ``\sigma`` is the effective target area.
+	- Macroscopic Cross Section ``\Sigma = n \sigma``: The total target area per unit volume of material. It tells you how dense the material feels to a passing neutron.
+	2. **Flight Distance ``d``** The distance ``d`` a neutron travels before colliding follows an exponential pdf: ``p(d) = \Sigma e^{- \Sigma d}``
+	3. **Collision Type:** When a collision happens, the total cross section is split into probabilities.
+	4. **The Multiplication Factor ``\langle k \rangle``**: `` k = \frac{\text{Average number of new neutrons produced via fission}}{\text{Primary neutron}}``
+	- ``k<1``: Subciritcal
+	- ``k=1``: Critical
+	- ``k>1``: Supercritical
+
 #### Neutron Reaction Rate Proportional to Neutron Flux and Target Area
 
 Assume foil density ``n`` (atoms/cm3), width ``\Delta x``, bombarded with beam (area ``A``) of neutrons ``I`` (neutrons/s) with velocity ``v_n``.
@@ -980,6 +1004,11 @@ Cross sections ``\sigma\left(E\right)`` can be separated into different types of
 ```
 
 Neutron cross section data is available from [NNDC](http://www.nndc.bnl.gov/sigma/index.jsp).
+"""
+
+# ╔═╡ 1f8dc2a3-953f-4a3f-b753-99beb65cd44f
+md"""
+$(PlutoUI.LocalResource("./lectures/img/neutron_flux.png"))
 """
 
 # ╔═╡ eac9d6c6-9c58-4d29-8271-53e62049d1c1
@@ -1073,6 +1102,11 @@ begin
 	@show λ300K λ2e6eV; # cm
 	σ300K, σ2e6eV, Σ300K, Σ2e6eV, λ300K, λ2e6eV
 end
+
+# ╔═╡ 433675b0-3e03-4f21-ad35-62e0a5d1c8db
+md"""
+$(PlutoUI.LocalResource("./lectures/img/isotropy.png"))
+"""
 
 # ╔═╡ ee3b48d1-7e23-4bb2-b1c0-928c13be6d54
 md"""Fission of U235 yields on average: 2.44 total neutrons (1, 2, 3 or 4 depending on reaction)
@@ -1434,12 +1468,14 @@ end
 # ╠═dcee775b-4283-4165-89db-b5fc87e0116c
 # ╟─4707b42d-8200-4ceb-a206-6b2e25e233ae
 # ╟─7b1be50c-9369-4ab6-8501-745f7f58080e
+# ╟─1f8dc2a3-953f-4a3f-b753-99beb65cd44f
 # ╠═eac9d6c6-9c58-4d29-8271-53e62049d1c1
 # ╟─6b58361b-d4c4-46cd-a5d1-87163bcf4074
 # ╠═c502fa5f-d884-4dd8-ad0f-588fa5efa317
+# ╟─433675b0-3e03-4f21-ad35-62e0a5d1c8db
 # ╟─ee3b48d1-7e23-4bb2-b1c0-928c13be6d54
 # ╠═b4fa15a8-0f1e-4971-99fb-cc05d8fe352a
-# ╠═06a5bacd-1f40-448f-803a-94eddc3535a2
+# ╟─06a5bacd-1f40-448f-803a-94eddc3535a2
 # ╠═51f9fd3b-2c80-40c6-8c0b-dc1a155cda07
 # ╟─0f1b1228-c95b-4494-99a5-03ef1ac521a9
 # ╠═1b34e902-bfbf-47a9-98eb-7f87d4321f7c
