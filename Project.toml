@@ -1,5 +1,6 @@
 [deps]
 Agents = "46ada45e-f475-11e8-01d0-f70cc89e6671"
+AgentsExampleZoo = "88acaeb2-2f63-4ada-bca2-2825d9da22ed"
 BenchmarkTools = "6e4b80f9-dd63-53aa-95a3-0cdb28fa8baf"
 Bijectors = "76274a88-744f-5084-9051-94815aaf08c4"
 CSV = "336ed68f-0bac-5ca0-87d4-7b16caf5d00b"
@@ -37,18 +38,8 @@ StatsBase = "2913bbd2-ae8a-5f71-8c99-4fb6c76f3a91"
 StatsPlots = "f3b207a7-027a-5e70-b257-86293d7955fd"
 Tulip = "6dd1b50a-3aae-11e9-10b5-ef983d2400fa"
 
-# The CDN Windows machines are stuck on Julia 1.10.0, which bundles an older GCC runtime
-# (CompilerSupportLibraries 1.0.5) than binaries built from mid-2025 onwards expect. Those
-# binaries load fine on a Mac/Linux/up-to-date-Windows Julia and fail on the CDN machines with
-#     could not load library "...\Qt6Test.dll"
-#     The specified procedure could not be found.
-# Qt6Base_jll, GLFW_jll and LittleCMS_jll are listed as direct dependencies only so that these
-# ceilings can be expressed here; nothing in the course loads them directly. They hold the whole
-# GR/Plots graphics chain (via Qt6Base and GLFW) and the ImageMagick/OpenJpeg imaging chain
-# (via LittleCMS) at versions that do load on Julia 1.10.0.
-# Read setup/maintaining.md before touching or relaxing these bounds.
 [compat]
-julia = "~1.10"
 GLFW_jll = "~3.4"
 LittleCMS_jll = "~2.16"
 Qt6Base_jll = "~6.7.1"
+julia = "~1.10"
